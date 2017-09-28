@@ -23,3 +23,4 @@ LICENSE = "MIT"
 
 IMAGE_ROOTFS_SIZE ?= "8192"
 
+IMAGE_INSTALL_append = " helloworld-nexell"

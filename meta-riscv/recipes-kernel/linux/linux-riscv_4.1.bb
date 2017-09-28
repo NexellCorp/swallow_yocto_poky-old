@@ -29,8 +29,11 @@ KERNEL_IMAGETYPE = "vmlinux"
 # Pick up shared functions
 inherit kernel
 
-SRC_URI += "git://github.com/riscv/riscv-linux.git;branch=master;destsuffix=${S} \
+SRC_URI += "git://git.nexell.co.kr/nexell/riscv/riscv-linux.git;branch=riscv-next;destsuffix=${S} \
             https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.1.17.tar.xz;name=kernel"
+
+# SRC_URI += "git://github.com/riscv/riscv-linux.git;branch=master;destsuffix=${S}
+#             https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.1.17.tar.xz;name=kernel"
 
 do_overlay_kernel() {
   cp -R ${WORKDIR}/linux-4.1.17/* ${S}
